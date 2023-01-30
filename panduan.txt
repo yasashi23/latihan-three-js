@@ -1,1 +1,3 @@
 Masalah di vertexnya
+- const a = document.querySelectorAll('[data-test="job-tile-list"] section .row .col h3 a') ==> untuk tittle
+- const b = document.querySelectorAll('[data-test="job-tile-list"] section .row .col h3 a') ==> untuk negaranya
