@@ -20,6 +20,7 @@ text="hello"
 contact_path='//span[contains(@title,'+ target +')]'
 contact=wait.until(EC.presence_of_all_elements_located((By.XPATH,contact_path)))
 contact.click()
+# kirim pesan
 message_box_path = '//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[2]'
 messeage_box=wait.until(EC.presence_of_all_elements_located((By.XPATH,message_box_path)))
 messeage_box.send_key(text + Keys.ENTER)

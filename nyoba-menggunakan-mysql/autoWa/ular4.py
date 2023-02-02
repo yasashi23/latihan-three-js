@@ -18,21 +18,31 @@ browser.maximize_window()
 browser.get('https://web.whatsapp.com/')
 print("=============== BERJALAN 2 ==============")
 
-search_xpath = '//*[@id="pane-side"]/div[1]/div/div/div[4]'
-search_box = WebDriverWait(browser,500).until(EC.presence_of_all_elements_located((By.XPATH,search_xpath)))
-browser.find_element(
-    "xpath",'//*[@id="pane-side"]/div[1]/div/div/div[4]').click()
+# kontak
+# search_xpath = '//*[@id="pane-side"]/div[1]/div/div/div[4]'
+# search_box = WebDriverWait(browser,500).until(EC.presence_of_all_elements_located((By.XPATH,search_xpath)))
+# browser.find_element(
+#     "xpath",'//*[@id="pane-side"]/div[1]/div/div/div[4]').click()
+
+target = '"No.2bisnis"'
+contact_path = '//span[contains(@title,' + target + ')]'
+contact = WebDriverWait(browser, 500).until(
+    EC.presence_of_all_elements_located((By.XPATH, contact_path)))
+contact[0].click()
 print("=============== BERJALAN 3 ==============")
+
 
 time.sleep(1)
 text = "udin"
 
-input = '//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/div[1]'
+classnya = "_3Uu1_"
+input = '//div[contains(@class,' + classnya + ')]'
 input_wait = WebDriverWait(browser, 500).until(
     EC.presence_of_all_elements_located((By.XPATH, input)))
 inputnya = browser.find_element("xpath",input)
-inputnya.click()
+input_wait[0].click()
 print("=============== BERJALAN 4 ==============")
 time.sleep(2)
-inputnya.send_keys(text + Keys.ENTER)
+input_wait[0].send_keys(text)
+input_wait[0].send_keys(Keys.ENTER)
 print("=============== FINISH ==============")
